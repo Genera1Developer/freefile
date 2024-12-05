@@ -23,7 +23,7 @@
       padding: 0;
     }
     .file-item {
-      padding: 8px;
+      padding: 10px;
       background-color: #fff;
       margin: 4px 0;
       border-radius: 5px;
@@ -43,6 +43,11 @@
     .file-item .file-name {
       font-weight: bold;
     }
+    .file-item .file-size,
+    .file-item .file-type {
+      font-size: 0.9em;
+      color: #666;
+    }
   </style>
 </head>
 <body>
@@ -53,8 +58,8 @@
   </div>
 
   <script>
-    const username = "your-github-username";  // Replace with the repository owner's GitHub username
-    const repo = "your-repository-name";     // Replace with the repository name
+    const username = "Genera1Developer";  // Replace with the repository owner's GitHub username
+    const repo = "freefile";     // Replace with the repository name
     const branch = "main";                   // Change to your branch name if necessary
 
     const fileListElement = document.getElementById('file-list');
@@ -81,20 +86,38 @@
         const listItem = document.createElement('li');
         listItem.classList.add('file-item');
 
+        let fileSize = '';
+        let fileType = file.type === 'dir' ? 'Directory' : 'File';
+        
+        if (file.type !== 'dir' && file.size) {
+          // Convert size to KB or MB for better readability
+          fileSize = formatFileSize(file.size);
+        }
+
         if (file.type === 'dir') {
           listItem.innerHTML = `
             <span class="file-name">${file.name}</span>
-            <span class="file-action"><a href="javascript:void(0)" onclick="fetchFiles('${path}/${file.name}')">Open</a></span>
+            <span class="file-type">${fileType}</span>
+            <span class="file-action"><a href="javascript:void(0)" onclick="fetchFiles('${path ? path + '/' : ''}${file.name}')">Open</a></span>
           `;
         } else {
           listItem.innerHTML = `
             <span class="file-name">${file.name}</span>
+            <span class="file-size">${fileSize}</span>
+            <span class="file-type">${fileType}</span>
             <span class="file-action"><a href="${file.download_url}" target="_blank">Download</a></span>
           `;
         }
 
         fileListElement.appendChild(listItem);
       });
+    }
+
+    // Function to format file size
+    function formatFileSize(size) {
+      if (size < 1024) return size + ' bytes';
+      if (size < 1024 * 1024) return (size / 1024).toFixed(1) + ' KB';
+      return (size / (1024 * 1024)).toFixed(1) + ' MB';
     }
 
     // Initial fetch to load the files from the root directory
