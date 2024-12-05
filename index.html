@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>F.08.WQ</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    .container {
+      width: 80%;
+      margin: 20px auto;
+    }
+    h1 {
+      text-align: center;
+    }
+    .file-list {
+      list-style-type: none;
+      padding: 0;
+    }
+    .file-item {
+      padding: 8px;
+      background-color: #fff;
+      margin: 4px 0;
+      border-radius: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      border: 1px solid #ddd;
+    }
+    .file-item:hover {
+      background-color: #e9e9e9;
+    }
+    .file-item a {
+      text-decoration: none;
+      color: #333;
+    }
+    .file-item .file-name {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>F.08.WQ</h1>
+    <ul id="file-list" class="file-list"></ul>
+  </div>
+
+  <script>
+    const username = "your-github-username";  // Replace with the repository owner's GitHub username
+    const repo = "your-repository-name";     // Replace with the repository name
+    const branch = "main";                   // Change to your branch name if necessary
+
+    const fileListElement = document.getElementById('file-list');
+
+    // Function to fetch files from the GitHub API
+    async function fetchFiles(path = '') {
+      try {
+        const response = await fetch(`https://api.github.com/repos/${username}/${repo}/contents/${path}?ref=${branch}`);
+        if (!response.ok) {
+          throw new Error('Failed to fetch files');
+        }
+        const files = await response.json();
+        displayFiles(files, path);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    // Function to display the list of files and directories
+    function displayFiles(files, path) {
+      fileListElement.innerHTML = '';
+
+      files.forEach(file => {
+        const listItem = document.createElement('li');
+        listItem.classList.add('file-item');
+
+        if (file.type === 'dir') {
+          listItem.innerHTML = `
+            <span class="file-name">${file.name}</span>
+            <span class="file-action"><a href="javascript:void(0)" onclick="fetchFiles('${path}/${file.name}')">Open</a></span>
+          `;
+        } else {
+          listItem.innerHTML = `
+            <span class="file-name">${file.name}</span>
+            <span class="file-action"><a href="${file.download_url}" target="_blank">Download</a></span>
+          `;
+        }
+
+        fileListElement.appendChild(listItem);
+      });
+    }
+
+    // Initial fetch to load the files from the root directory
+    fetchFiles();
+  </script>
+
+</body>
+</html>
