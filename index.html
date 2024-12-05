@@ -48,22 +48,6 @@
       font-size: 0.9em;
       color: #666;
     }
-    .file-preview {
-      margin-top: 20px;
-      padding: 10px;
-      background-color: #fff;
-      border-radius: 5px;
-      display: none;
-    }
-    .file-preview img {
-      max-width: 100%;
-      height: auto;
-    }
-    .file-preview pre {
-      white-space: pre-wrap;
-      word-wrap: break-word;
-      font-family: "Courier New", Courier, monospace;
-    }
   </style>
 </head>
 <body>
@@ -71,24 +55,15 @@
   <div class="container">
     <h1>F.08.WQ</h1>
     <ul id="file-list" class="file-list"></ul>
-
-    <!-- Preview Section -->
-    <div id="file-preview" class="file-preview">
-      <h3>File Preview</h3>
-      <div id="preview-content"></div>
-    </div>
   </div>
 
   <script>
-    const username = "Genera1Developer";  // Your GitHub username
-    const repo = "freefile";             // Your repository name
-    const branch = "main";               // Change to your branch name if necessary
+    const username = "Genera1Developer";
+    const repo = "freefile";
+    const branch = "main";
 
     const fileListElement = document.getElementById('file-list');
-    const previewElement = document.getElementById('file-preview');
-    const previewContent = document.getElementById('preview-content');
 
-    // Function to fetch files from the GitHub API
     async function fetchFiles(path = '') {
       try {
         const response = await fetch(`https://api.github.com/repos/${username}/${repo}/contents/${path}?ref=${branch}`);
@@ -102,7 +77,6 @@
       }
     }
 
-    // Function to display the list of files and directories
     function displayFiles(files, path) {
       fileListElement.innerHTML = '';
 
@@ -114,7 +88,6 @@
         let fileType = file.type === 'dir' ? 'Directory' : 'File';
         
         if (file.type !== 'dir' && file.size) {
-          // Convert size to KB or MB for better readability
           fileSize = formatFileSize(file.size);
         }
 
@@ -130,7 +103,6 @@
             <span class="file-size">${fileSize}</span>
             <span class="file-type">${fileType}</span>
             <span class="file-action"><a href="${file.download_url}" target="_blank">Download</a></span>
-            <span class="file-action"><a href="javascript:void(0)" onclick="previewFile('${file.download_url}', '${file.name}')">Preview</a></span>
           `;
         }
 
@@ -138,43 +110,12 @@
       });
     }
 
-    // Function to format file size
     function formatFileSize(size) {
       if (size < 1024) return size + ' bytes';
       if (size < 1024 * 1024) return (size / 1024).toFixed(1) + ' KB';
       return (size / (1024 * 1024)).toFixed(1) + ' MB';
     }
 
-    // Function to preview file content
-    async function previewFile(url, fileName) {
-      try {
-        const response = await fetch(url);
-        const fileType = fileName.split('.').pop().toLowerCase();
-        const content = await response.text();
-
-        previewElement.style.display = 'block';
-        previewContent.innerHTML = '';
-
-        // Preview for text-based files
-        if (fileType === 'txt' || fileType === 'md' || fileType === 'json' || fileType === 'html') {
-          previewContent.innerHTML = `<h4>Previewing: ${fileName}</h4><pre>${content}</pre>`;
-        } 
-        // Preview for image files
-        else if (['jpg', 'jpeg', 'png', 'gif'].includes(fileType)) {
-          previewContent.innerHTML = `<h4>Previewing: ${fileName}</h4><img src="${url}" alt="${fileName}" />`;
-        } 
-        // Preview for PDF files
-        else if (fileType === 'pdf') {
-          previewContent.innerHTML = `<h4>Previewing: ${fileName}</h4><iframe src="${url}" width="100%" height="500px"></iframe>`;
-        } else {
-          previewContent.innerHTML = `<h4>Cannot preview this file type: ${fileName}</h4>`;
-        }
-      } catch (error) {
-        console.error('Error previewing file:', error);
-      }
-    }
-
-    // Initial fetch to load the files from the root directory
     fetchFiles();
   </script>
 
