@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glitch Services</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #121212;
+      color: #f1f1f1;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: #ff0099;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .category-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .category {
+      background-color: #ff0099;
+      border-radius: 10px;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      color: #fff;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .category:hover {
+      transform: scale(1.1);
+      background-color: #ff66cc;
+    }
+
+    .button {
+      padding: 12px 30px;
+      border: none;
+      background-color: #00ff99;
+      color: #121212;
+      font-size: 1.1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #00cc66;
+    }
+
+    .links-container {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .link-item {
+      background-color: #333;
+      padding: 10px 20px;
+      border-radius: 8px;
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .link-item:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h1>Glitch Services</h1>
+
+  <div class="category-container">
+    <div class="category" onclick="showLinks('tech')">Tech</div>
+    <div class="category" onclick="showLinks('entertainment')">Entertainment</div>
+    <div class="category" onclick="showLinks('gaming')">Gaming</div>
+    <div class="category" onclick="showLinks('music')">Music</div>
+    <div class="category" onclick="showLinks('social')">Social</div>
+  </div>
+
+  <div id="linksSection" style="display: none;">
+    <div id="randomButtonContainer">
+      <button class="button" onclick="goToRandomLink()">Go to Random Link</button>
+    </div>
+    <div class="links-container" id="linksList"></div>
+  </div>
+
+  <script>
+    const linksData = {
+      tech: [
+        { name: "Tech News", url: "https://techcrunch.com" },
+        { name: "Hacker News", url: "https://news.ycombinator.com" },
+        { name: "GitHub", url: "https://github.com" },
+      ],
+      entertainment: [
+        { name: "Netflix", url: "https://netflix.com" },
+        { name: "IMDb", url: "https://imdb.com" },
+        { name: "YouTube", url: "https://youtube.com" },
+      ],
+      gaming: [
+        { name: "Steam", url: "https://store.steampowered.com" },
+        { name: "Twitch", url: "https://twitch.tv" },
+        { name: "IGN", url: "https://ign.com" },
+      ],
+      music: [
+        { name: "Spotify", url: "https://spotify.com" },
+        { name: "Apple Music", url: "https://music.apple.com" },
+        { name: "SoundCloud", url: "https://soundcloud.com" },
+      ],
+      social: [
+        { name: "Twitter", url: "https://twitter.com" },
+        { name: "Instagram", url: "https://instagram.com" },
+        { name: "Facebook", url: "https://facebook.com" },
+      ],
+    };
+
+    function showLinks(category) {
+      document.getElementById('linksSection').style.display = 'block';
+      document.getElementById('randomButtonContainer').style.display = 'block';
+
+      const linksList = document.getElementById('linksList');
+      linksList.innerHTML = ''; // Clear previous links
+      const categoryLinks = linksData[category];
+
+      categoryLinks.forEach(link => {
+        const linkItem = document.createElement('a');
+        linkItem.classList.add('link-item');
+        linkItem.href = link.url;
+        linkItem.target = '_blank';
+        linkItem.textContent = link.name;
+        linksList.appendChild(linkItem);
+      });
+    }
+
+    function goToRandomLink() {
+      const randomCategory = Object.keys(linksData)[Math.floor(Math.random() * Object.keys(linksData).length)];
+      const randomLink = linksData[randomCategory][Math.floor(Math.random() * linksData[randomCategory].length)];
+      window.location.href = randomLink.url;
+    }
+  </script>
+</body>
+</html>
