@@ -1,160 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Glitch Services</title>
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      background-color: #121212;
-      color: #f1f1f1;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      flex-direction: column;
-      text-align: center;
-    }
-
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      color: #ff0099;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    }
-
-    .category-container {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .category {
-      background-color: #ff0099;
-      border-radius: 10px;
-      padding: 15px 30px;
-      font-size: 1.2rem;
-      color: #fff;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: transform 0.3s ease;
-    }
-
-    .category:hover {
-      transform: scale(1.1);
-      background-color: #ff66cc;
-    }
-
-    .button {
-      padding: 12px 30px;
-      border: none;
-      background-color: #00ff99;
-      color: #121212;
-      font-size: 1.1rem;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    .button:hover {
-      background-color: #00cc66;
-    }
-
-    .links-container {
-      margin-top: 2rem;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-
-    .link-item {
-      background-color: #333;
-      padding: 10px 20px;
-      border-radius: 8px;
-      color: #fff;
-      text-decoration: none;
-      font-size: 1rem;
-      transition: background-color 0.3s ease;
-    }
-
-    .link-item:hover {
-      background-color: #555;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Glitch Services - A place with tons of categorized links.">
+    <title>Glitch Services</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #8a2be2, #ff6347);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+            min-height: 100vh;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+        }
+        .category-button {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid #ffffff;
+            padding: 15px 25px;
+            border-radius: 30px;
+            font-size: 1.1em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .category-button:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .link-section {
+            display: none;
+            margin-top: 30px;
+        }
+        .link-section.active {
+            display: block;
+        }
+        .link-list {
+            margin-top: 20px;
+            list-style: none;
+        }
+        .link-list li {
+            margin: 10px 0;
+        }
+        .link-list a {
+            color: #ff6347;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: color 0.3s ease;
+        }
+        .link-list a:hover {
+            color: #8a2be2;
+        }
+        .random-button {
+            margin-top: 20px;
+            background-color: #ff6347;
+            padding: 12px 25px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+        .random-button:hover {
+            background-color: #8a2be2;
+        }
+        footer {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            font-size: 1.1em;
+        }
+    </style>
 </head>
 <body>
-  <h1>Glitch Services</h1>
+    <h1>Glitch Services</h1>
 
-  <div class="category-container">
-    <div class="category" onclick="showLinks('tech')">Tech</div>
-    <div class="category" onclick="showLinks('entertainment')">Entertainment</div>
-    <div class="category" onclick="showLinks('gaming')">Gaming</div>
-    <div class="category" onclick="showLinks('music')">Music</div>
-    <div class="category" onclick="showLinks('social')">Social</div>
-  </div>
-
-  <div id="linksSection" style="display: none;">
-    <div id="randomButtonContainer">
-      <button class="button" onclick="goToRandomLink()">Go to Random Link</button>
+    <div class="button-container">
+        <button class="category-button" onclick="showLinks('65.109.112.222', 'Selenite')">Selenite</button>
+        <button class="category-button" onclick="showLinks('5.161.68.227', 'Astroid V3')">Astroid V3</button>
+        <button class="category-button" onclick="showLinks('129.213.65.72', 'TinfOil')">TinfOil</button>
+        <button class="category-button" onclick="showLinks('163.123.192.9', 'Ghost')">Ghost</button>
+        <button class="category-button" onclick="showLinks('74.208.202.111', 'Equinox')">Equinox</button>
+        <button class="category-button" onclick="showLinks('198.251.90.4', 'Art Class')">Art Class</button>
+        <button class="category-button" onclick="showLinks('66.94.122.218', 'Kitty Cat')">Kitty Cat</button>
+        <button class="category-button" onclick="showLinks('150.136.32.139', 'Shadow Tabbed')">Shadow Tabbed</button>
+        <button class="category-button" onclick="showLinks('209.222.97.244', 'Kazwire')">Kazwire</button>
+        <button class="category-button" onclick="showLinks('104.243.45.193', 'Light')">Light</button>
+        <button class="category-button" onclick="showLinks('5.161.119.46', 'Breakium')">Breakium</button>
+        <button class="category-button" onclick="showLinks('88.99.136.115', 'Abyss')">Abyss</button>
+        <button class="category-button" onclick="showLinks('216.24.57.1', 'Plexile')">Plexile</button>
+        <button class="category-button" onclick="showLinks('163.123.192.252', 'Doge')">Doge</button>
+        <button class="category-button" onclick="showLinks('139.144.185.201', 'Night')">Night</button>
+        <button class="category-button" onclick="showLinks('109.122.46.55', 'Phantom Games & Emerald')">Phantom Games & Emerald</button>
+        <button class="category-button" onclick="showLinks('5.161.151.227', 'Shuttle')">Shuttle</button>
+        <button class="category-button" onclick="showLinks('192.68.426.99', 'ShuttleAl')">ShuttleAl</button>
+        <button class="category-button" onclick="showLinks('45.90.12.30:7068', 'Frogies Arcade')">Frogies Arcade</button>
+        <button class="category-button" onclick="showLinks('66.175.239.22', 'Xenapsis')">Xenapsis</button>
+        <button class="category-button" onclick="showLinks('104.243.38.145', 'Space')">Space</button>
+        <button class="category-button" onclick="showLinks('104.21.54.237', 'Duckflix')">Duckflix</button>
     </div>
-    <div class="links-container" id="linksList"></div>
-  </div>
 
-  <script>
-    const linksData = {
-      tech: [
-        { name: "Tech News", url: "https://techcrunch.com" },
-        { name: "Hacker News", url: "https://news.ycombinator.com" },
-        { name: "GitHub", url: "https://github.com" },
-      ],
-      entertainment: [
-        { name: "Netflix", url: "https://netflix.com" },
-        { name: "IMDb", url: "https://imdb.com" },
-        { name: "YouTube", url: "https://youtube.com" },
-      ],
-      gaming: [
-        { name: "Steam", url: "https://store.steampowered.com" },
-        { name: "Twitch", url: "https://twitch.tv" },
-        { name: "IGN", url: "https://ign.com" },
-      ],
-      music: [
-        { name: "Spotify", url: "https://spotify.com" },
-        { name: "Apple Music", url: "https://music.apple.com" },
-        { name: "SoundCloud", url: "https://soundcloud.com" },
-      ],
-      social: [
-        { name: "Twitter", url: "https://twitter.com" },
-        { name: "Instagram", url: "https://instagram.com" },
-        { name: "Facebook", url: "https://facebook.com" },
-      ],
-    };
+    <div id="links" class="link-section"></div>
 
-    function showLinks(category) {
-      document.getElementById('linksSection').style.display = 'block';
-      document.getElementById('randomButtonContainer').style.display = 'block';
+    <footer>
+        <p>&copy; 2024 Glitch Services | All Rights Reserved</p>
+    </footer>
 
-      const linksList = document.getElementById('linksList');
-      linksList.innerHTML = ''; // Clear previous links
-      const categoryLinks = linksData[category];
+    <script>
+        const API_KEY = 'ac9c3d177fcfc8'; // Your ipinfo.io API key
 
-      categoryLinks.forEach(link => {
-        const linkItem = document.createElement('a');
-        linkItem.classList.add('link-item');
-        linkItem.href = link.url;
-        linkItem.target = '_blank';
-        linkItem.textContent = link.name;
-        linksList.appendChild(linkItem);
-      });
-    }
+        // Function to fetch the links associated with an IP from ipinfo.io API
+        async function fetchLinks(ip) {
+            const url = `https://ipinfo.io/${ip}/json?token=${API_KEY}`;
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+                
+                // ipinfo.io doesn't provide domains associated with an IP directly, but we will list basic info
+                if (data.error) {
+                    console.error('Error:', data.error.message);
+                    return [];
+                }
 
-    function goToRandomLink() {
-      const randomCategory = Object.keys(linksData)[Math.floor(Math.random() * Object.keys(linksData).length)];
-      const randomLink = linksData[randomCategory][Math.floor(Math.random() * linksData[randomCategory].length)];
-      window.location.href = randomLink.url;
-    }
-  </script>
+                // For demo purposes, we are using the IP address as the site for now
+                // In a real-world scenario, you would need a real reverse IP lookup API that lists domains
+                return [data.hostname || ip];
+            } catch (error) {
+                console.error('Error fetching data:', error);
+                return [];
+            }
+        }
+
+        // Show the links or random link for the selected category
+        async function showLinks(ip, category) {
+            const linkSection = document.getElementById('links');
+            linkSection.innerHTML = '<p>Loading links...</p>';
+
+            const links = await fetchLinks(ip);
+
+            if (links.length === 0) {
+                linkSection.innerHTML = `<p>No links found for ${category}. Try again later.</p>`;
+                return;
+            }
+
+            let htmlContent = `<h2>${category} Links</h2><ul>`;
+            links.forEach(link => {
+                htmlContent += `<li><a href="http://${link}" target="_blank">${link}</a></li>`;
+            });
+            htmlContent += `</ul>`;
+
+            htmlContent += `<button class="random-button" onclick="goToRandomLink(${JSON.stringify(links)})">Go to Random Link</button>`;
+
+            linkSection.innerHTML = htmlContent;
+        }
+
+        // Redirect to a random link
+        function goToRandomLink(links) {
+            const randomLink = links[Math.floor(Math.random() * links.length)];
+            window.open(`http://${randomLink}`, '_blank');
+        }
+    </script>
 </body>
 </html>
